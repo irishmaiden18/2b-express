@@ -149,45 +149,13 @@ For each of the following URL's, they want you respond accordingly:
 - If the URL ends in `"/green"`, they want you to send back only the `greenLine` property.
 - If the URL ends in anything else, they want you to send back `"The MTA is currently working to complete this application soon. Thank you for your patience"`
 
-### Sending JSON Using Express
-
-You saw how to send a string as a response from inside an Express request handler:
-
-``` js
-res.status(200).send("Home page");
-```
-
-And you've also seen how to send JSON using the HTTP module:
-
-``` js
-res.writeHead(200, {'Content-Type': 'application/json'});
-res.write(JSON.stringify({name: 'Colin', age: 44, hobbies: ['emacs', 'board games']}));
-```
-
-With Express, sending JSON is as easy as sending a string, you simply use a different method. Setting the header and stringifying the object into JSON is all done for you!
-
-``` js
-res.status(200).json({name: 'Colin', age: 44, hobbies: ['emacs', 'board games']});
-```
-
-Or, as is more common, the data you're sending back is in a variable, so you'd send it like this:
-
-``` js
-res.status(200).json(someVariableWithDataInIt);
-```
-
-And that's all you'll need to know for this assignment!
-
 ### Bonus
 
-You decided to impress the MTA with your work and take this API a step further. Here are your goals:
+You decided to impress the MTA with your work and take this API a step further. Here is your goal:
 
 - If the URL ends in `"/1"`, you want to send back only the objects where `"1"` is in the `train` property
-- If the URL ends in `"/2"`, you want to send back only the objects where `"2"` is in the `train` property
-- If the URL ends in `"/3"`, you want to send back only the objects where `"3"` is in the `train` property
-- If the URL ends in `"/4"`, you want to send back only the objects where `"4"` is in the `train` property
-- If the URL ends in `"/5"`, you want to send back only the objects where `"5"` is in the `train` property
-- If the URL ends in `"/6"`, you want to send back only the objects where `"6"` is in the `train` property
+
+Now if only there was a way to get this to work for trains 1-6 WITHOUT repeating the same code.....
 
 ## Extra Bonus
 
